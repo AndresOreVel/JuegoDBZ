@@ -1,8 +1,12 @@
 package objects;
 
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import java.awt.Rectangle;
+
+import helpers.AssetManager;
+import utils.Settings;
 
 public class Goku extends Actor {
     public static final int GOKU_STRAIGHT = 0;
@@ -20,8 +24,24 @@ public class Goku extends Actor {
         this.y = y;
         this.width = width;
         this.height = height;
+        //Inicializo el personaje al estado normal
         this.direction = GOKU_STRAIGHT;
+
+        //Creo el rectángulo de colisiones
         this.collisionRect = new Rectangle();
+    }
+
+    public TextureRegion getGokuTexture(){
+        switch (direction){
+            //case GOKU_STRAIGHT:
+                //return AssetManager.gokuTexture;
+            case GOKU_UP:
+                return AssetManager.gokuTextureUp;
+            case GOKU_DOWN:
+                return AssetManager.gokuTextureDown;
+            default:
+                return AssetManager.gokuTexture;
+        }
     }
 
     private int points;
@@ -64,6 +84,14 @@ public class Goku extends Actor {
     @Override
     public float getHeight() {
         return height;
+    }
+
+    public void goUp(){
+        direction = GOKU_UP;
+    }
+
+    public void goDown(){
+        direction = GOKU_DOWN;
     }
 
     public void restart(){
