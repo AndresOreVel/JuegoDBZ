@@ -22,18 +22,18 @@ public class AssetManager {
 
         //*****************TEXTURAS************
         //Fondo de pantalla
-        backgroundTexture = new TextureRegion(sheet, 0, 177, 480, 135);
+        backgroundTexture = new TextureRegion(sheet, 0, 200, 583, 200);
 
         //Texturas de Goku
-        gokuTexture = new TextureRegion(sheet, 0, 300, 50,50);
-        gokuTextureUp = new TextureRegion(sheet, 50,204, 50,50);
-        gokuTextureDown = new TextureRegion(sheet, 60, 300, 50, 50);
+        gokuTexture = new TextureRegion(sheet, 0, 305, 67,80);
+        gokuTextureUp = new TextureRegion(sheet, 76,205, 67,80);
+        gokuTextureDown = new TextureRegion(sheet, 136, 305, 67, 80);
 
         //Textura de alubias
-        beansTexture = new TextureRegion(sheet, 500, 204, 50, 25);
+        beansTexture = new TextureRegion(sheet, 500, 202, 70, 40);
 
         //Textura de Ráfagas
-        burnsTexture = new TextureRegion(sheet, 390, 300, 60, 20);
+        burnsTexture = new TextureRegion(sheet, 359, 260, 102, 30);
 
         //Creo la animación de las beans y hago que se ejecute en sentido antihorario
         beansAnim = new Animation(0.05f, beansTexture);

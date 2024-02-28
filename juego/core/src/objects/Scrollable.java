@@ -29,6 +29,31 @@ public class Scrollable extends Actor {
     }
 
     public void reset(float newX){
+        position.x = newX;
+        leftOfScreen = false;
+    }
 
+    public boolean isLeftOfScreen() {
+        return leftOfScreen;
+    }
+
+    public float getTailX() {
+        return position.x + width;
+    }
+
+    public float getX() {
+        return position.x;
+    }
+
+    public float getY() {
+        return position.y;
+    }
+
+    public float getWidth() {
+        return width;
+    }
+
+    public float getHeight() {
+        return height;
     }
 }
