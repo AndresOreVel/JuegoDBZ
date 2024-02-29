@@ -66,7 +66,21 @@ public class ScrollHandler extends Group {
 
         //Desde el segundo hasta la última ráfaga
         for(int i = 1; i < numBurst; i++){
+            //Creo la medida aleatoria
+            newSize = Methods.randomFloat(Settings.MIN_BURST, Settings.MAX_BURST) * 34;
+            //Añado la ráfaga
+            firsBurst = new Burst(this.bursts.get(this.bursts.size() - 1).getTailX() + Settings.BURST_GAP, r.nextInt(Settings.GAME_HEIGHT - (int) newSize), newSize, newSize, Settings.BURST_SPEED);
+            //Añado la ráfaga al ArrayList
+            bursts.add(firsBurst);
+            //Añado la ráfaga al grupo de actores
+            addActor(firsBurst);
+        }
+    }
+
+    public boolean collides(Goku goku){
+        for(Burst burst : bursts){
 
         }
+        return false;
     }
 }

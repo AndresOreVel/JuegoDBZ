@@ -1,5 +1,6 @@
 package objects;
 
+import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Circle;
 
 import utils.Methods;
@@ -15,5 +16,15 @@ public class Burst extends Scrollable {
 
         //Creo el círculo
         collisionBurstCircle = new Circle();
+    }
+
+    @Override
+    public void draw(Batch batch, float parentAlpha) {
+        super.draw(batch, parentAlpha);
+
+    }
+
+    public float getRunTime() {
+        return runTime;
     }
 }
